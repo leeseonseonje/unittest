@@ -3,6 +3,7 @@ package unit.test.unittest.chapter1.coverage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
 public class QuarterCoverage {
 
@@ -20,5 +21,15 @@ public class QuarterCoverage {
 
     private boolean isStringLong(String input) {
         return input.length() > 5;
+    }
+
+    @Test
+    void test() {
+        int result = parseInt("5");
+        assertThat(result).isEqualTo(5);
+    }
+
+    private int parseInt(String input) {
+        return Integer.parseInt(input);
     }
 }
