@@ -1,8 +1,11 @@
 package unit.test.unittest.chapter2.dependency;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Data
+@Getter
+@NoArgsConstructor
 public class Customer {
 
     private Store store;
@@ -10,9 +13,6 @@ public class Customer {
     private Product product;
 
     private int count;
-
-    public Customer() {
-    }
 
     public boolean purchase(Store store, Product product, int count) {
         return store.cell(product, count);

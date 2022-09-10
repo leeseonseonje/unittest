@@ -1,8 +1,8 @@
 package unit.test.unittest.chapter2.dependency;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class Store {
 
     private Product product;

@@ -1,6 +1,5 @@
 package unit.test.unittest.chapter2.dependency.classical;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import unit.test.unittest.chapter2.dependency.Customer;
 import unit.test.unittest.chapter2.dependency.Store;
