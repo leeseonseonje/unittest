@@ -20,17 +20,16 @@ public class Store {
 
     public boolean cell(Product product, int count) {
         if (this.product == product) {
-            return this.checkedStockQuantity(count);
+            return checkedStockQuantity(count);
         }
         return false;
     }
 
     private boolean checkedStockQuantity(int count) {
-        if (this.stockQuantity > count) {
-            this.stockQuantity -= count;
-            return true;
-        } else {
-            return false;
-        }
+        return stockQuantity > count;
+    }
+
+    public void removeStockQuantity(int count) {
+        this.stockQuantity -= count;
     }
 }

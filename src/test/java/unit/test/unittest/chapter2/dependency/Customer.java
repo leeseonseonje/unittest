@@ -15,6 +15,10 @@ public class Customer {
     private int count;
 
     public boolean purchase(Store store, Product product, int count) {
-        return store.cell(product, count);
+        if (store.cell(product, count)) {
+            store.removeStockQuantity(count);
+            return true;
+        }
+        return false;
     }
 }
