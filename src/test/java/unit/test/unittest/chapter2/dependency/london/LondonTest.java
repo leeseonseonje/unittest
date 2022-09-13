@@ -25,7 +25,6 @@ public class LondonTest {
         boolean success = customer.purchase(store, SHAMPOO, 5);
 
         assertThat(success).isTrue();
-        verify(store, times(1)).removeStockQuantity(5);
     }
 
     @Test
@@ -36,6 +35,5 @@ public class LondonTest {
         boolean success = customer.purchase(store, SHAMPOO, 5);
 
         assertThat(success).isFalse();
-        verify(store, never()).removeStockQuantity(5);
     }
 }
