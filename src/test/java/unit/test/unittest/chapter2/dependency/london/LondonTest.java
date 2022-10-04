@@ -20,8 +20,8 @@ public class LondonTest {
     @Test
     void purchaseSucceedsWhenEnoughInventory() {
         given(store.cell(SHAMPOO, 5)).willReturn(true);
-
         Customer customer = new Customer();
+
         boolean success = customer.purchase(store, SHAMPOO, 5);
 
         assertThat(success).isTrue();
@@ -30,8 +30,8 @@ public class LondonTest {
     @Test
     void purchaseFailsWhenNotEnoughInventory() {
         given(store.cell(SHAMPOO, 5)).willReturn(false);
-
         Customer customer = new Customer();
+
         boolean success = customer.purchase(store, SHAMPOO, 5);
 
         assertThat(success).isFalse();
