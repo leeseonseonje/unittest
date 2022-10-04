@@ -1,6 +1,5 @@
 package unit.test.unittest.chapter1.coverage;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;

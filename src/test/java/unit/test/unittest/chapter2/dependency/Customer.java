@@ -1,6 +1,5 @@
 package unit.test.unittest.chapter2.dependency;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
