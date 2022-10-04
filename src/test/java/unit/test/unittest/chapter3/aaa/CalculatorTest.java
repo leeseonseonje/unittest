@@ -1,6 +1,5 @@
 package unit.test.unittest.chapter3.aaa;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
@@ -17,6 +16,7 @@ public class CalculatorTest {
         //실행
         double result = calculator.sum(first, second);
 
+        //검증
         assertThat(result).isEqualTo(30);
     }
 }
