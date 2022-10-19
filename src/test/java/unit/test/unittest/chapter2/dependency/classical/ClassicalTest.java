@@ -12,9 +12,9 @@ public class ClassicalTest {
     @Test
     void PurchaseSucceedsWhenEnoughInventory() {
         Store store = Store.addInventory(SHAMPOO, 10);
-        Customer customer = new Customer();
+        Customer sut = new Customer();
 
-        boolean success = customer.purchase(store, SHAMPOO, 5);
+        boolean success = sut.purchase(store, SHAMPOO, 5);
 
         assertThat(success).isTrue();
         assertThat(store.getStockQuantity()).isEqualTo(5);
@@ -23,9 +23,9 @@ public class ClassicalTest {
     @Test
     void purchaseFailsWhenNotEnoughInventory() {
         Store store = Store.addInventory(SHAMPOO, 10);
-        Customer customer = new Customer();
+        Customer sut = new Customer();
 
-        boolean success = customer.purchase(store, SHAMPOO, 15);
+        boolean success = sut.purchase(store, SHAMPOO, 15);
 
         assertThat(success).isFalse();
         assertThat(store.getStockQuantity()).isEqualTo(10);

@@ -19,14 +19,18 @@ public class TestConstructor {
 
     @Test
     void purchaseSucceedsWhenEnoughInventory() {
+
         boolean success = sut.purchase(store, Product.SHAMPOO, 5);
+
         assertThat(success).isTrue();
         assertThat(store.getStockQuantity()).isEqualTo(5);
     }
 
     @Test
     void purchaseFailsWhenNotEnoughInventory() {
+
         boolean success = sut.purchase(store, Product.SHAMPOO, 15);
+
         assertThat(success).isFalse();
         assertThat(store.getStockQuantity()).isEqualTo(10);
     }

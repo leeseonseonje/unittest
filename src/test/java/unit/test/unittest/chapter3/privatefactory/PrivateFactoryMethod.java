@@ -14,7 +14,9 @@ public class PrivateFactoryMethod {
     void purchaseSucceedsWhenEnoughInventory() {
         Store store = createStoreWithInventory(Product.SHAMPOO, 10);
         Customer sut = createCustomer();
+
         boolean success = sut.purchase(store, Product.SHAMPOO, 5);
+
         assertThat(success).isTrue();
         assertThat(store.getStockQuantity()).isEqualTo(5);
     }
@@ -23,7 +25,9 @@ public class PrivateFactoryMethod {
     void purchaseFailsWhenNotEnoughInventory() {
         Store store = createStoreWithInventory(Product.SHAMPOO, 10);
         Customer sut = createCustomer();
+
         boolean success = sut.purchase(store, Product.SHAMPOO, 15);
+
         assertThat(success).isFalse();
         assertThat(store.getStockQuantity()).isEqualTo(10);
     }
