@@ -12,10 +12,7 @@ public class TestCoverage {
     }
 
     private boolean isStringLong(String input) {
-        if (input.length() > 5) {
-            return true;
-        }
-        return false;
+        return input.length() > 5;
     }
 
     @Test

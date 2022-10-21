@@ -6,16 +6,12 @@ import static org.assertj.core.api.Assertions.*;
 
 public class CoverageProblem {
 
-    private boolean wasLastStringLong;
-
     @Test
     void test() {
         assertThat(isStringLong("abc")).isFalse();
     }
 
     private boolean isStringLong(String input) {
-        boolean result = input.length() > 5;
-        wasLastStringLong = result;
-        return result;
+        return input.length() > 5;
     }
 }
