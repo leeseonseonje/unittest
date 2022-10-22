@@ -1,4 +1,4 @@
-package unit.test.unittest.chapter4.renderer;
+package unit.test.unittest.chapter4.refactoring_tolerance;
 
 public class BodyRenderer implements IRenderer {
 

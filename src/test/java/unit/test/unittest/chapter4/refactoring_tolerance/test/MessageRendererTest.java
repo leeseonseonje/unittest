@@ -1,10 +1,9 @@
-package unit.test.unittest.chapter4.renderer.t;
+package unit.test.unittest.chapter4.refactoring_tolerance.test;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import unit.test.unittest.chapter4.renderer.*;
+import unit.test.unittest.chapter4.refactoring_tolerance.*;
 
 import java.util.List;
 
@@ -15,7 +14,6 @@ public class MessageRendererTest {
     @Test
     @DisplayName("리팩토링 내성이 없는 테스트 최종 결과가 바뀌지 않아도 테스트가 실패 할 수 있음")
     void messageRenderer_uses_correct_sub_renderers() {
-
         MessageRenderer sut = new MessageRenderer();
 
         List<IRenderer> renderers = sut.getSubRenderers();
@@ -33,6 +31,7 @@ public class MessageRendererTest {
         Message message = new Message("h", "b", "f");
 
         String html = sut.render(message);
+
         Assertions.assertThat(html).isEqualTo("<header>h</header>\n<body>b</body>\n<footer>f</footer>");
     }
 }
