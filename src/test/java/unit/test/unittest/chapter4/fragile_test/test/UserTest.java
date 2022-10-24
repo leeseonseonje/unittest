@@ -1,6 +1,5 @@
 package unit.test.unittest.chapter4.fragile_test.test;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import unit.test.unittest.chapter4.fragile_test.User;
