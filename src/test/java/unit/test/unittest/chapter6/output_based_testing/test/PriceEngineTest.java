@@ -1,15 +1,14 @@
 package unit.test.unittest.chapter6.output_based_testing.test;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import unit.test.unittest.chapter6.output_based_testing.PriceEngine;
-import unit.test.unittest.chapter6.output_based_testing.Product;
+import unit.test.unittest.chapter6.Product;
 
 import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class PriceEnginTest {
+public class PriceEngineTest {
 
     @Test
     void discount_of_two_products() {

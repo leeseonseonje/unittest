@@ -1,4 +1,4 @@
-package unit.test.unittest.chapter6.output_based_testing;
+package unit.test.unittest.chapter6;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
