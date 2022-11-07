@@ -1,4 +1,4 @@
-package unit.test.unittest.chapter1.coverage;
+package unit.test.unittest.chapter1.coverage.test;
 
 import org.junit.jupiter.api.Test;
 

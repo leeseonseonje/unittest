@@ -1,7 +1,8 @@
-package unit.test.unittest.chapter6.status_based_testing;
+package unit.test.unittest.chapter6.status_based_testing.test;
 
 import org.junit.jupiter.api.Test;
 import unit.test.unittest.chapter6.Product;
+import unit.test.unittest.chapter6.status_based_testing.Order;
 
 import static org.assertj.core.api.Assertions.*;
 
