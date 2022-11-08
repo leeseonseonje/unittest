@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 public class PriceEngine {
 
-    public BigDecimal calculateDiscount(Product...products) {
+    public BigDecimal calculateDiscount(Product... products) {
         BigDecimal discount = BigDecimal.valueOf(products.length * 0.01);
         return discount.min(BigDecimal.valueOf(0.2));
     }
