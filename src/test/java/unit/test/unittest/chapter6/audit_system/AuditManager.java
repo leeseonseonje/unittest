@@ -24,34 +24,33 @@ public class AuditManager {
     private int maxEntriesPerFile;
     private String directoryName;
 
-    public void addRecord(String visitorName, LocalDateTime timeOfVisit) throws IOException {
-        File file = new File(directoryName);
-        File[] filePaths = file.listFiles();
+    private FileSystem fileSystem;
 
-        String newRecord = visitorName + ";  " + timeOfVisit;
+    public void addRecord(String visitorName, LocalDateTime timeOfVisit) {
+        File[] filePaths = fileSystem.getFiles(directoryName);
+        String newRecord = visitorName + ";" + timeOfVisit;
 
         if (filePaths.length == 0) {
-            Path path = Paths.get(directoryName + "/audit_1.txt");
-            Path newFile = Files.createFile(path);
-            Files.write(newFile, singleton(newRecord));
+            Path newFile = Paths.get(directoryName + "/audit_1.txt");
+            fileSystem.createFile(newFile);
+            fileSystem.write(newFile, newRecord);
             return;
         }
 
         File[] sorted = sortFileList(filePaths);
-        Path currentFilePath = Paths.get(sorted[0].getAbsolutePath());
-        System.out.println(currentFilePath.getFileName().toString());
+        Path currentFilePath = Paths.get(sorted[sorted.length - 1].getAbsolutePath());
         int index = Integer.parseInt(String.valueOf(currentFilePath.getFileName().toString().charAt(6)));
-        List<String> lines = Files.readAllLines(currentFilePath);
-
+        List<String> lines = fileSystem.readAllLines(currentFilePath);
         if (lines.size() < maxEntriesPerFile) {
             lines.add(newRecord);
             String newContent = String.join("\r\n", lines);
-            Files.write(currentFilePath, singleton(newContent));
+            fileSystem.write(currentFilePath, newContent);
         } else {
             int newIndex = index + 1;
             String newName = "audit_" + newIndex + ".txt";
             Path newFile = Paths.get(directoryName + "/" + newName);
-            Files.write(newFile, singleton(newRecord));
+            fileSystem.createFile(newFile);
+            fileSystem.write(newFile, newRecord);
         }
     }
 
