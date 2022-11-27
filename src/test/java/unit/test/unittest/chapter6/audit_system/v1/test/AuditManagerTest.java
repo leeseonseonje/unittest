@@ -1,9 +1,8 @@
-package unit.test.unittest.chapter6.audit_system.test;
+package unit.test.unittest.chapter6.audit_system.v1.test;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.BDDMockito;
-import unit.test.unittest.chapter6.audit_system.AuditManager;
+import unit.test.unittest.chapter6.audit_system.v1.AuditManager;
 import unit.test.unittest.chapter6.audit_system.FileSystem;
 import unit.test.unittest.chapter6.audit_system.JavaFileSystem;
 
@@ -26,6 +25,7 @@ public class AuditManagerTest {
     }
 
     @Test
+    @DisplayName("파일 시스템 mock으로 대체")
     void audit_manager_mock() {
         String directoryName = "/Users/iseonje/unittest_training";
         FileSystem mock = mock(FileSystem.class);
