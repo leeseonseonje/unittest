@@ -15,7 +15,12 @@ public class CompanyV3 {
     private int numberOfEmployees;
 
     public void changeNumberOfEmployees(int delta) {
-        numberOfEmployees += delta;
+
+        if (numberOfEmployees + delta >= 0) {
+            numberOfEmployees += delta;
+        } else {
+            throw new IllegalStateException("직원이 없습니다.");
+        }
     }
 
     public boolean isEmailCorporate(String email) {

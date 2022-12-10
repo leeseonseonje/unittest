@@ -1,5 +1,6 @@
 package unit.test.unittest.chapter7.v3.test;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import unit.test.unittest.chapter7.v3.CompanyV3;
@@ -19,5 +20,22 @@ public class CompanyTest {
         boolean emailCorporate = sut.isEmailCorporate(email);
 
         assertThat(emailCorporate).isEqualTo(expectedResult);
+    }
+
+    @Test
+    void change_number_of_employees() {
+        CompanyV3 sut = new CompanyV3("email@email.com", 1);
+
+        sut.changeNumberOfEmployees(1);
+
+        assertThat(sut.getNumberOfEmployees()).isEqualTo(2);
+    }
+
+    @Test
+    void number_of_employees_min_zero() {
+        CompanyV3 sut = new CompanyV3("email@email.com", 0);
+
+        assertThatThrownBy(() -> sut.changeNumberOfEmployees(-1))
+                .isInstanceOf(IllegalStateException.class);
     }
 }
