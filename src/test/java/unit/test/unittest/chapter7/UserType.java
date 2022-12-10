@@ -1,4 +1,4 @@
-package unit.test.unittest.chapter7.v1;
+package unit.test.unittest.chapter7;
 
 import lombok.AllArgsConstructor;
 
